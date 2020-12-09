@@ -37,10 +37,4 @@ public class TestBase {
         attachVideo();
         closeWebDriver();
     }
-
-//    @AfterAll
-//    @Step("Teardown")
-//    static void tearDown() {
-//        closeWebDriver();
-//    }
 }
