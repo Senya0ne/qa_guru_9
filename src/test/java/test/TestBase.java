@@ -23,7 +23,8 @@ public class TestBase {
         capabilities.setCapability("enableVideo",true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://" + System.getProperty("username") + ":" + System.getProperty("user.password") + "@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+//        Configuration.remote = "https://" + System.getProperty("username") + ":" + System.getProperty("user.password") + "@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
         Configuration.startMaximized = true;
     }
 
