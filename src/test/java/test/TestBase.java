@@ -16,7 +16,9 @@ import static helpers.AttachmentsHelper.*;
 public class TestBase {
     @BeforeAll
     static void setUp() {
-        String url = System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+        String selenoidLogin = System.getProperty("username");
+        String selenoidPwd = System.getProperty("selenoidPwd");
+        String url = "https://"+ selenoidLogin + ":"+ selenoidPwd  +"@" +System.getProperty("remote.browser.url") + ":4444/wd/hub/";
 
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
 
@@ -25,7 +27,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo",true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@" + url;
+        Configuration.remote = url;
         Configuration.startMaximized = true;
     }
 
