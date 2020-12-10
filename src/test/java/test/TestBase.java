@@ -16,8 +16,8 @@ import static helpers.AttachmentsHelper.*;
 public class TestBase {
     @BeforeAll
     static void setUp() {
-        String selenoidLogin = System.getProperty("username");
-        String selenoidPwd = System.getProperty("selenoidPwd");
+        String selenoidLogin = System.getProperty("selenoid.username");
+        String selenoidPwd = System.getProperty("selenoid.pwd");
         String url = "https://"+ selenoidLogin + ":"+ selenoidPwd  +"@" +System.getProperty("remote.browser.url") + ":4444/wd/hub/";
 
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
