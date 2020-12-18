@@ -19,7 +19,7 @@ public class TestBase {
         String selenoidLogin = System.getProperty("selenoid.username");
         String selenoidPwd = System.getProperty("selenoid.pwd");
         String remoteBrowser = System.getProperty("remote.browser.url");
-        String url = "http://"+ selenoidLogin + ":" + selenoidPwd  + "@" + remoteBrowser + ":4444/wd/hub/";
+        String url = "https://"+ selenoidLogin + ":" + selenoidPwd  + "@" + remoteBrowser + ":4444/wd/hub/";
 
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
 
